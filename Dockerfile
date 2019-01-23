@@ -26,7 +26,7 @@ chown -R activemq:activemq /opt/$ACTIVEMQ && \
 chown -h activemq:activemq $ACTIVEMQ_HOME && \
 apk del build-dependencies && \
 rm -rf /var/cache/apk/*
-
+RUN sudo hostname "$(hostname | cut -c1-63)"
 USER activemq
 
 WORKDIR $ACTIVEMQ_HOME
